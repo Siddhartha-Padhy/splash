@@ -4,9 +4,10 @@ import { useEffect, useState } from 'react'
 
 function HomePage() {
   const [images, setImages] = useState([])
+  const [page, setPage] = useState(1)
 
   function getImages() {
-    fetch('https://picsum.photos/v2/list?page=1&limit=35')
+    fetch(`https://picsum.photos/v2/list?page=${page}&limit=35`)
       .then((data) => {
         return data.json()
       })
@@ -18,7 +19,7 @@ function HomePage() {
 
   useEffect(() => {
     getImages()
-  }, [])
+  }, [page])
 
   return (
     <div className="HomePage">
@@ -27,7 +28,14 @@ function HomePage() {
         <div className="rounded p-1 bg-slate-800 m-1 text-center">
           <button className="bg-orange-600 rounded px-2 m-1">Prev</button>
           <button>Curr</button>
-          <button className="bg-orange-600 rounded px-2 m-1">Next</button>
+          <button
+            className="bg-orange-600 rounded px-2 m-1"
+            onClick={() => {
+              setPage(page + 1)
+            }}
+          >
+            Next
+          </button>
         </div>
       </div>
     </div>

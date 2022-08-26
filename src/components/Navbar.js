@@ -2,18 +2,18 @@ import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
-    <div className="bg-gray-800 py-1 px-1 relative shadow-lg">
+    <div className="bg-slate-700 py-1 px-1 relative shadow-lg">
       <div className="flex justify-between">
-        <div className="flex items-center">
+        <div className="flex items-center mx-2">
           <img
-            src="https://picsum.photos/id/1025/50/50"
+            src="https://picsum.photos/id/237/50/50"
             alt="brand-logo"
             className="rounded-full my-1"
           />
           <div className="mx-2">
-            <strong className="text-red-600">Andrew Alfred</strong>
+            <strong className="text-red-600">Splash 📷</strong>
             <br />
-            <span>Technical advisor</span>
+            <span className="text-white">Photography</span>
           </div>
         </div>
         <div className="my-auto mx-5">
@@ -21,14 +21,14 @@ function Navbar() {
             <li>
               <Link
                 to="/"
-                className="transition ease-in-out delay-80 hover:text-red-500 mx-1"
+                className="transition ease-in-out delay-80 hover:text-rose-700 mx-1"
               >
-                Home
+                <i class="fa fa-home" aria-hidden="true"></i>&nbsp; Home
               </Link>
             </li>
             <li>
-              <Link to="/about" className="hover:text-red-500 mx-1">
-                About
+              <Link to="/about" className="hover:text-rose-700 mx-1">
+                <i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp; About
               </Link>
             </li>
           </ul>

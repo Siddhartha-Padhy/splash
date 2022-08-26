@@ -23,13 +23,20 @@ function HomePage() {
 
   return (
     <div className="HomePage">
-      <div className="bg-sky-700 justify-center p-2">
+      <div className="bg-rose-700 justify-center p-2">
         <Card images={images} />
         <div className="rounded p-1 bg-slate-800 m-1 text-center">
-          <button className="bg-orange-600 rounded px-2 m-1">Prev</button>
-          <button>Curr</button>
           <button
-            className="bg-orange-600 rounded px-2 m-1"
+            className="bg-cyan-600 rounded p-1 px-2 m-1"
+            onClick={() => {
+              if (page > 1) setPage(page - 1)
+            }}
+          >
+            Prev
+          </button>
+          <span className="bg-white p-1 px-2 rounded mx-3">{page}</span>
+          <button
+            className="bg-cyan-600 rounded p-1 px-2 m-1"
             onClick={() => {
               setPage(page + 1)
             }}
